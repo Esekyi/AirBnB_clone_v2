@@ -1,0 +1,14 @@
+*.venv/
+*versions/
+*.tgz
+*.tgz
+*__pycache__/
+*__init__.py
+*__init__.pyc
+*__pycache__/
+*__pycache__/
+*__pycache__/
+*__pycache__/
+*__pycache__/
+*__pycache__/
+*__pycache__/
