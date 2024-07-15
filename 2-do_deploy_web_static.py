@@ -8,6 +8,7 @@ import os
 import sys
 from datetime import datetime
 
+
 env.hosts = [
     '100.26.211.53',
     '34.229.70.70'
@@ -18,7 +19,10 @@ env.key = sys.argv[2]
 
 
 def do_pack():
-    """generates a .tgz archive from the contents of the web_static"""
+    """
+    do_pack Function
+    generates a .tgz archive from the contents of the web_static
+    """
     date = datetime.now().strftime("%Y%m%d%H%M%S")
     archive_name = f'web_static_{date}.tgz'
     if not os.path.exists("versions"):
@@ -32,9 +36,13 @@ def do_pack():
 
 
 def do_deploy(archive_path):
-    """Deploy an archived files to a remote server"""
-    if not os.path.exists(archive_path):
+    """
+    do_deploy Function
+    Deploy an archived files to a remote server
+    """
+    if not os.path.isfile(archive_path):
         return False
+
     try:
         split_path = archive_path.split('/')
         file_name = split_path[-1].split('.')[0]
