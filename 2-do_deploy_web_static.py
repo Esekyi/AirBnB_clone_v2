@@ -5,7 +5,7 @@ Fabric script to deploy an archived files to a remote server
 
 from fabric.api import env, put, run, local
 import os
-import sys
+# import sys
 from datetime import datetime
 
 
@@ -14,8 +14,8 @@ env.hosts = [
     '34.229.70.70'
 ]
 
-env.user = sys.argv[1]
-env.key = sys.argv[2]
+env.user = 'ubuntu'
+# env.key = '~/.ssh/id_rsa'
 
 
 def do_pack():
@@ -39,6 +39,7 @@ def do_deploy(archive_path):
     """
     do_deploy Function
     Deploy an archived files to a remote server
+    @archive_path: path to the archives
     """
     if not os.path.isfile(archive_path):
         return False
