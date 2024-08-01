@@ -6,8 +6,8 @@
 </head>
 
 <BODY>
-	{% if number %}
-	<h1>Number: {{ number }}</h1>
+	{% if number and status %}
+	<h1>Number: {{ number }} is {{status}}</h1>
 	{% endif %}
 </BODY>
 
